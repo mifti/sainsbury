@@ -1,0 +1,1 @@
+libraryDependencies += "net.ruippeixotog" %% "scala-scraper" % "2.2.0"
