@@ -51,7 +51,7 @@ class ProductModel {
   }
   
   /**
-   * decription getter
+   * description getter
    */
   def description: String = {
     return _description
