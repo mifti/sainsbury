@@ -3,7 +3,7 @@ package com.mi.sainsbury.utilities
 /**
  * Helper object containing utility functions
  */
-object Helper {
+object NumericHelper {
   /**
    * method to get precise double value
    */

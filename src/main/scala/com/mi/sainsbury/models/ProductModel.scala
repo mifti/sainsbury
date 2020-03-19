@@ -1,6 +1,6 @@
 package com.mi.sainsbury.models
 
-import com.mi.sainsbury.utilities.Helper
+import com.mi.sainsbury.utilities.NumericHelper
 
 /**
  * Product Model class
@@ -31,7 +31,7 @@ class ProductModel {
    * return price double value with 2 precision
    */
   def price: Double = {
-    return Helper.doubleDecimalPrecision(_price, 2)
+    return NumericHelper.doubleDecimalPrecision(_price, 2)
   }
 
   /**
@@ -46,7 +46,7 @@ class ProductModel {
       _price = 0
     }
     else{
-      _price = Helper.toDouble(value.substring(1, value.length()-5))
+      _price = NumericHelper.toDouble(value.substring(1, value.length()-5))
     }
   }
   
@@ -82,7 +82,7 @@ class ProductModel {
       _calories = 0
     }
     else{
-      _calories = Helper.toInt(value.substring(0, value.length()-4))
+      _calories = NumericHelper.toInt(value.substring(0, value.length()-4))
     }
   }
   

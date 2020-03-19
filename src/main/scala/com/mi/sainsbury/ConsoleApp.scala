@@ -2,6 +2,7 @@ package com.mi.sainsbury
 
 import com.mi.sainsbury.response.dto.ProductResponseDto
 import com.mi.sainsbury.services.ProductScraperService
+import com.mi.sainsbury.utilities.TotalCalculator
 
 /**
  * Sainsbury ConsoleApp Object
@@ -14,8 +15,9 @@ object ConsoleApp {
    */
   def init(): Unit = {
     var products = ProductScraperService.getProducts()
-    var total = ProductScraperService.getTotal(products)
-    var jsonproduct = new ProductResponseDto(products, total)
+    var gross = TotalCalculator.getTotalGross(products)
+    var vat = TotalCalculator.getTotalVat(gross)
+    var jsonproduct = new ProductResponseDto(products, gross, vat)
     println(jsonproduct.getJsonResponse())
   }
 }

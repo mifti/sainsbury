@@ -1,4 +1,4 @@
-package com.mi.sainsbury.browsers
+package com.mi.sainsbury.utilities
 
 import net.ruippeixotog.scalascraper.browser.JsoupBrowser
 import org.jsoup.Connection

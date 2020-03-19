@@ -3,7 +3,7 @@ package com.mi.sainsbury.test.negative
 import org.junit.Assert._
 import org.junit.Test
 
-import com.mi.sainsbury.scrapers.ScalaScraper
+import com.mi.sainsbury.utilities.ScalaScraper
 import com.mi.sainsbury.constants.Constants
 import net.ruippeixotog.scalascraper.model._
 

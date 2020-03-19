@@ -1,11 +1,9 @@
 package com.mi.sainsbury.services
 
 import scala.collection.mutable.ArrayBuffer
-import com.mi.sainsbury.scrapers.ScalaScraper
+import com.mi.sainsbury.utilities.ScalaScraper
 import com.mi.sainsbury.models.ProductModel
 import com.mi.sainsbury.constants.Constants
-import com.mi.sainsbury.repositories.ProductRepository
-import com.mi.sainsbury.models.TotalModel
 
 /**
  * Product Scraper Service object implements 
@@ -44,19 +42,6 @@ object ProductScraperService extends ProductRepository {
       }
     }
     return products
-  }
-
-  /**
-   * method to get calculated value of total gross and vat 
-   * from products list
-   * 
-   * @products: list of products
-   */
-  def getTotal(products: ArrayBuffer[ProductModel]): TotalModel = {
-    var total = new TotalModel
-    total.calculateTotal(products)
-    return total
-
   }
 
 }

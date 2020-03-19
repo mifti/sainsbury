@@ -3,7 +3,7 @@ package com.mi.sainsbury.test.positive
 import org.junit.Assert._
 import org.junit.Test
 
-import com.mi.sainsbury.scrapers.ScalaScraper
+import com.mi.sainsbury.utilities.ScalaScraper
 import com.mi.sainsbury.constants.Constants
 
 

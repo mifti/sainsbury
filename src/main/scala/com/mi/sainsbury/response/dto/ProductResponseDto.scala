@@ -3,17 +3,16 @@ package com.mi.sainsbury.response.dto
 import scala.collection.mutable.ArrayBuffer
 import org.json4s.JsonDSL._
 
-import com.mi.sainsbury.jsonparser.Json4s
+import com.mi.sainsbury.utilities.Json4s
 import com.mi.sainsbury.models.ProductModel
-import com.mi.sainsbury.models.TotalModel
 
 /**
  * response dto class for product list
  */
-class ProductResponseDto(products: ArrayBuffer[ProductModel], total: TotalModel) {
-  
+class ProductResponseDto(products: ArrayBuffer[ProductModel], gross: Double, vat: Double) {
+
   /**
-   * method to defines json format for product list 
+   * method to defines json format for product list
    * and return beautified json as string
    */
   def getJsonResponse(): String = {
@@ -34,8 +33,8 @@ class ProductResponseDto(products: ArrayBuffer[ProductModel], total: TotalModel)
           }
         }) ~
         ("total" ->
-          ("gross" -> total.gross) ~
-          ("vat" -> total.vat)))
+          ("gross" -> gross) ~
+          ("vat" -> vat)))
     return Json4s.beautifyJson(json)
   }
 }

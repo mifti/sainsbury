@@ -1,8 +1,7 @@
-package com.mi.sainsbury.repositories
+package com.mi.sainsbury.services
 
 import scala.collection.mutable.ArrayBuffer
 import com.mi.sainsbury.models.ProductModel
-import com.mi.sainsbury.models.TotalModel
 
 /**
  * Product Repository
@@ -14,8 +13,4 @@ trait ProductRepository {
    */
   def getProducts() : ArrayBuffer[ProductModel];
   
-  /**
-   * method declaration for total values
-   */
-  def getTotal(products: ArrayBuffer[ProductModel]) : TotalModel;
 }

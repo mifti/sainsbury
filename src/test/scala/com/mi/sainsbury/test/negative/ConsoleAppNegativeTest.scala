@@ -8,6 +8,7 @@ import org.json4s.jackson.JsonMethods._
 
 import com.mi.sainsbury.response.dto.ProductResponseDto
 import com.mi.sainsbury.services.ProductScraperService
+import com.mi.sainsbury.utilities.TotalCalculator
 
 class ConsoleAppNegativeTest {
   val expectedOutput = parse("""{
@@ -102,8 +103,9 @@ class ConsoleAppNegativeTest {
   @Test
   def testApp(){
     var products = ProductScraperService.getProducts()
-    var total = ProductScraperService.getTotal(products)
-    var productResponse = new ProductResponseDto(products, total)
+    var gross = TotalCalculator.getTotalGross(products)
+    var vat = TotalCalculator.getTotalVat(gross)
+    var productResponse = new ProductResponseDto(products, gross, vat)
     var jsonString = productResponse.getJsonResponse()
     var jsonEvaluated = parse(jsonString)
     assertEquals(true, jsonEvaluated!=expectedOutput)

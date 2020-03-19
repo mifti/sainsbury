@@ -1,4 +1,4 @@
-package com.mi.sainsbury.jsonparser
+package com.mi.sainsbury.utilities
 
 import org.json4s._
 import org.json4s.JsonDSL._

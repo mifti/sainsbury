@@ -1,14 +1,11 @@
-package com.mi.sainsbury.scrapers
+package com.mi.sainsbury.utilities
 
-import net.ruippeixotog.scalascraper.browser.JsoupBrowser
 import net.ruippeixotog.scalascraper.dsl.DSL._
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 import net.ruippeixotog.scalascraper.model._
 import net.ruippeixotog.scalascraper.scraper.ContentParsers._
-import java.net.SocketTimeoutException
 import java.util.concurrent.TimeUnit
 import scala.concurrent.duration.Duration
-import com.mi.sainsbury.browsers.CustomJsoupBrowser
 
 /**
  * Scala scraper wrapper class of 
