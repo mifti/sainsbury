@@ -1,4 +1,4 @@
-package com.mi.sainsbury.test.negative
+package com.mi.sainsbury.test.positive
 
 import org.junit.Assert._
 import org.junit.Test
@@ -10,7 +10,7 @@ import com.mi.sainsbury.response.dto.ProductResponseDto
 import com.mi.sainsbury.services.ProductScraperService
 import com.mi.sainsbury.utilities.TotalCalculator
 
-class ConsoleAppNegativeTest {
+class ResultEqualityPostiveTest {
   val expectedOutput = parse("""{
   "results" : [ {
     "title" : "Sainsbury's Strawberries 400g",
@@ -95,19 +95,19 @@ class ConsoleAppNegativeTest {
   } ],
   "total" : {
     "gross" : 39.5,
-    "vat" : 0
+    "vat" : 6.58
   }
 }
 """)
   
   @Test
-  def testApp(){
+  def testAppResultEquality(){
     var products = ProductScraperService.getProducts()
     var gross = TotalCalculator.getTotalGross(products)
     var vat = TotalCalculator.getTotalVat(gross)
     var productResponse = new ProductResponseDto(products, gross, vat)
     var jsonString = productResponse.getJsonResponse()
     var jsonEvaluated = parse(jsonString)
-    assertEquals(true, jsonEvaluated!=expectedOutput)
+    assertEquals(jsonEvaluated, expectedOutput)
   }
 }

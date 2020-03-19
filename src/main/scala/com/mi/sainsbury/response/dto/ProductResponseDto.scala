@@ -35,6 +35,7 @@ class ProductResponseDto(products: ArrayBuffer[ProductModel], gross: Double, vat
         ("total" ->
           ("gross" -> gross) ~
           ("vat" -> vat)))
+
     return Json4s.beautifyJson(json)
   }
 }
