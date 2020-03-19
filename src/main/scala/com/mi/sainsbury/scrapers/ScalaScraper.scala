@@ -41,7 +41,7 @@ object ScalaScraper {
   }
 
   /**
-   * method to get html element list out of a documnet 
+   * method to get html element list out of a document 
    * found through css query selector 
    * 
    * @doc: Document containing elements to look into

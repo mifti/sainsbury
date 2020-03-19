@@ -28,7 +28,7 @@ class ProductModel {
   /**
    * price getter
    * 
-   * retrun price double value with 2 precision
+   * return price double value with 2 precision
    */
   def price: Double = {
     return Helper.doubleDecimalPrecision(_price, 2)

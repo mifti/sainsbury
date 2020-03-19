@@ -14,7 +14,7 @@ class TotalModel {
   /**
    * gross getter
    * 
-   * retrun gross double value with 2 precision
+   * return gross double value with 2 precision
    */
   def gross: Double = {
     return Helper.doubleDecimalPrecision(_gross, 2)
