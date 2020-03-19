@@ -32,9 +32,9 @@ object ScalaScraper {
       doc = browser.get(url)
     }
     catch {
-      case x: SocketTimeoutException =>
+      case x: Exception =>
         {
-          println("Exception: Read timed out.")
+          println("Exception: Something went wrong.")
         }
     }
     return doc
